@@ -9,41 +9,46 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 //need threading for Thread.Sleep for splash screen
 using System.Threading;
-//need media for SoundPlayer
+//need System.Media for SoundPlayer
 using System.Media;
 
 namespace PacMan
 {
     public partial class frmLevel1 : Form
     {
+        //declare lists
         List<PictureBox> listOfCoins = new List<PictureBox>();
         List<PictureBox> listAllOtherObjects = new List<PictureBox>();
 
+        //random number generator used for when the player loses
         Random rndNumGen = new Random();
 
-        //create the sound player
-        private SoundPlayer BackgroundMusic;
+        //declare the sound player
+        SoundPlayer BackgroundMusic;
 
         //delcare and initialize variables
         bool goUp = false, goDown = false, goLeft = false,
             goRight = false, playerControllsEnabled = true, pacmanChar,
             gameOver;
 
+        //type Image used for receiving different states of character chosen in previous form
         Image characterUp, characterRight, characterDown, characterLeft;
 
-        const int speed = 8;
+        const int SPEED = 8;
 
-        //ghost 1 and 2 variables 
-        int ghost1 = 8;
-        int ghost2 = 8;
+        //enemy 1 and 2 speed variables 
+        int enemy1 = 8;
+        int enemy2 = 8;
 
-        //ghost3 variables
-        int ghost3x = 8;
-        int ghost3y = 8;
+        //enemy3 variables
+        int enemy3x = 8;
+        int enemy3y = 8;
 
         //score variable
         int score = 0;
 
+        //on formload, get the direction that the character will be facing (true = right, false = down),
+        //  and all the images required to move the character in the different directions
         public frmLevel1(bool pacman, Image tmpCharacterUp, Image tmpCharacterRight, Image tmpCharacterDown, Image tmpCharacterLeft)
         {
             InitializeComponent();
@@ -63,6 +68,8 @@ namespace PacMan
 
         private void frmLevel1_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //if the user lost, the user will be able to return to the main menu
+            //  by pressing any key
             if (gameOver == true)
             {
                 Form frmMenu = new frmMenu();
@@ -78,63 +85,81 @@ namespace PacMan
             {
                 Console.WriteLine("***keyisdown called");
 
-                //if the left arrow key is pressed:
+                //if the left arrow key || A key is pressed:
                 if (e.KeyCode == Keys.Left || e.KeyCode == Keys.A)
                 {
                     Console.WriteLine("***Keys." + e.KeyCode + " is pressed");
-                    //set goLeft = true
+                    //move the character to the right
                     goLeft = true;
-                    //change the image to the pacman moving left
-                    picPacman.Image = characterLeft;
+                    //change the image to the character moving left
+                    picUserCharacter.Image = characterLeft;
                 }
 
-                //if the right arrow key is pressed:
+                //if the right arrow key || D key is pressed:
                 if (e.KeyCode == Keys.Right || e.KeyCode == Keys.D)
                 {
                     Console.WriteLine("***Keys." + e.KeyCode + " is pressed");
+                    //move the character to the right
                     goRight = true;
-                    picPacman.Image = characterRight;
+                    //change the image to the character moving right
+                    picUserCharacter.Image = characterRight;
                 }
 
+                //if the up arrow key || W key is pressed:
                 if (e.KeyCode == Keys.Up || e.KeyCode == Keys.W)
                 {
                     Console.WriteLine("***Keys." + e.KeyCode + " is pressed");
+                    //move the character up
                     goUp = true;
-                    picPacman.Image = characterUp;
+                    //change the image to the character moving up
+                    picUserCharacter.Image = characterUp;
                 }
 
+                //if the down arrow key || S key is pressed:
                 if (e.KeyCode == Keys.Down || e.KeyCode == Keys.S)
                 {
                     Console.WriteLine("***Keys." + e.KeyCode + " is pressed");
+                    //move the character down
                     goDown = true;
-                    picPacman.Image = characterDown;
+                    //change the image to the character moving down
+                    picUserCharacter.Image = characterDown;
                 }
             }
         }
 
         private void keyisup(object sender, KeyEventArgs e)
         {
+            //if the left arrow key || A key is released:
             if (e.KeyCode == Keys.Left || e.KeyCode == Keys.A)
             {
+                //stop the character from moving to the left
                 goLeft = false;
             }
 
+            //if the right arrow key || D key is released:
             if (e.KeyCode == Keys.Right || e.KeyCode == Keys.D)
             {
+                //stop the character from moving to the right
                 goRight = false;
             }
 
+            //if the up arrow key || W key is released:
             if (e.KeyCode == Keys.Up || e.KeyCode == Keys.W)
             {
+                //stop the character from moving up
                 goUp = false;
             }
 
+            //if the down arrow key || S key is released:
             if (e.KeyCode == Keys.Down || e.KeyCode == Keys.S)
             {
+                //stop the character from moving down
                 goDown = false;
             }
         }
 
+        //when the mute button is clicked, stop the background music,
+        //  hide picMute and show picUnmute
         private void picMute_Click(object sender, EventArgs e)
         {
             BackgroundMusic.Stop();
@@ -142,6 +167,8 @@ namespace PacMan
             picUnmute.Show();
         }
 
+        //when unmute button is clicked, play the background music,
+        //  hide picUnmute and show picMute
         private void picUnmute_Click(object sender, EventArgs e)
         {
             BackgroundMusic.Play();
@@ -151,95 +178,103 @@ namespace PacMan
 
         private void tmrTimer_Tick(object sender, EventArgs e)
         {
-            //Console.WriteLine("***timer1_Tick called");
             //show the score on the board
             lblScore.Text = "Score: " + score;
 
-            //player movement code start
+            //playerCharacter movement code start
             if (goLeft)
             {
-                //move the player to the left
-                picPacman.Left -= speed;
+                //move the character to the left
+                picUserCharacter.Left -= SPEED;
             }
 
             if (goRight)
             {
-                picPacman.Left += speed;
+                //move the character to the right
+                picUserCharacter.Left += SPEED;
             }
 
             if (goUp)
             {
-                picPacman.Top -= speed;
+                //move the character up
+                picUserCharacter.Top -= SPEED;
             }
 
             if (goDown)
             {
-                picPacman.Top += speed;
+                //move the character down
+                picUserCharacter.Top += SPEED;
             }
             //player movements code end
 
-            //moving the ghosts and bumping with the walls
-            picUgandanKnuckles1.Left += ghost1;
-            picWaluigi.Left += ghost2;
+            //moving enemies 1 and 2
+            picUgandanKnuckles1.Left += enemy1;
+            picWaluigi.Left += enemy2;
 
-            //if the red ghost hits the wall then reverse speed
+            //if the picUgandanKnuckles hits the wall then move in the opposite direction
             if (picUgandanKnuckles1.Bounds.IntersectsWith(picWall1.Bounds))
             {
-                ghost1 = -ghost1;
+                enemy1 = -enemy1;
             }
-            //if the red ghost hits the wall then reverse speed
+            //if the picUgandanKnuckles hits the wall then move in the opposite direction
             if (picUgandanKnuckles1.Bounds.IntersectsWith(picWall2.Bounds))
             {
-                ghost1 = -ghost1;
+                enemy1 = -enemy1;
             }
+            //if the picUgandanKnuckles hits the wall then move in the opposite direction
             if (picUgandanKnuckles1.Bounds.IntersectsWith(picWall3.Bounds))
             {
-                ghost1 = -ghost1;
+                enemy1 = -enemy1;
             }
+            //if the picUgandanKnuckles hits the wall then move in the opposite direction
             if (picUgandanKnuckles1.Bounds.IntersectsWith(picWall4.Bounds))
             {
-                ghost1 = -ghost1;
+                enemy1 = -enemy1;
             }
-            //if the yellow ghost hits the wall then reverse speed
+            //if the picWaluigi hits the wall then move in the opposite direction
             if (picWaluigi.Bounds.IntersectsWith(picWall1.Bounds))
             {
-                ghost2 = -ghost2;
+                enemy2 = -enemy2;
             }
+            //if the picWaluigi hits the wall then move in the opposite direction
             if (picWaluigi.Bounds.IntersectsWith(picWall2.Bounds))
             {
-                ghost2 = -ghost2;
+                enemy2 = -enemy2;
             }
-            //if the yellow ghost hits the wall then reverse speed
+            //if the picWaluigi hits the wall then move in the opposite direction
             if (picWaluigi.Bounds.IntersectsWith(picWall3.Bounds))
             {
-                ghost2 = -ghost2;
+                enemy2 = -enemy2;
             }
+            //if the picWaluigi hits the wall then move in the opposite direction
             if (picWaluigi.Bounds.IntersectsWith(picWall4.Bounds))
             {
-                ghost2 = -ghost2;
+                enemy2 = -enemy2;
             }
+            //if the picWaluigi hits the wall then move in the opposite direction
 
-            //for loop to check walls ghosts and points
+            //for loop to check for intersections between the player and walls, ghosts, and points
             foreach (Control atag in this.Controls)
             {
                 if (atag is PictureBox && atag.Tag == "ghost")
                 {
-                    //checking if the player hits the wall or the ghost, them game over
-                    if (((PictureBox)atag).Bounds.IntersectsWith(picPacman.Bounds))
+                    //checking if the player hits an enemy, them game over
+                    if (((PictureBox)atag).Bounds.IntersectsWith(picUserCharacter.Bounds))
                     {
                         int indexToRemove;
 
                         lblTransition.Show();
-                        picPacman.Left = 0;
-                        picPacman.Top = 25;
+                        picUserCharacter.Left = 0;
+                        picUserCharacter.Top = 25;
                         lblGameOver.Text = "GAME OVER";
                         lblGameOver.Show();
                         tmrTimer.Stop();
-                        picPacman.Hide();
+                        picUserCharacter.Hide();
                         picMute.Hide();
                         picUnmute.Hide();
                         BackgroundMusic.Stop();
-                       
+                        
+                        //while loop to hide remaining coins one at a time until none remain
                         while (listOfCoins.Count() > 0)
                         {
                             string tmpPicString;
@@ -260,8 +295,8 @@ namespace PacMan
                 }
                 if (atag is PictureBox && atag.Tag == "coin")
                 {
-                    //checking to see if the player hits the picturebox then add score
-                    if (((PictureBox)atag).Bounds.IntersectsWith(picPacman.Bounds))
+                    //checking to see if the player touches a coin, then add score
+                    if (((PictureBox)atag).Bounds.IntersectsWith(picUserCharacter.Bounds))
                     {
                         //remove the point
                         this.Controls.Remove(atag);
@@ -269,20 +304,22 @@ namespace PacMan
                         score++;
                         Console.WriteLine("***Score is " + score);
                         Console.WriteLine(atag.Name);
+                        //remove the coin from the list to prevent inconsistincies in case of game loss
                         listOfCoins.Remove((PictureBox)atag);
                         Console.WriteLine("***listOfCoins.Count is " + listOfCoins.Count());
 
                     }
+                    //if player wins
                     if (score == 30)
                     {
                         Console.WriteLine(lblScore.Text);
-                        picPacman.Left = 0;
-                        picPacman.Top = 25;
-                        Console.WriteLine("PAC-MAN location: " + picPacman.Location);
+                        picUserCharacter.Left = 0;
+                        picUserCharacter.Top = 25;
+                        Console.WriteLine("PAC-MAN location: " + picUserCharacter.Location);
                         lblGameOver.Text = ("YOU WIN!");
                         lblGameOver.Show();
                         tmrTimer.Stop();
-                        picPacman.Hide();
+                        picUserCharacter.Hide();
                         picMute.Hide();
                         picUnmute.Hide();
                         BackgroundMusic.Stop();
@@ -290,68 +327,77 @@ namespace PacMan
                         gameOver = true;
                     }
                 }
+                //if the character intersects with the top game-area-border, reverse their top speed
                 if (atag is PictureBox && atag.Tag == "noMansLandTop")
                 {
-                    if (((PictureBox)atag).Bounds.IntersectsWith(picPacman.Bounds))
+                    if (((PictureBox)atag).Bounds.IntersectsWith(picUserCharacter.Bounds))
                     {
-                        picPacman.Top += speed;
+                        picUserCharacter.Top += SPEED;
                     }
                 }
+                //if the character intersects with the right game-area-border, reverse their left speed
                 if (atag is PictureBox && atag.Tag == "noMansLandRight")
                 {
-                    if (((PictureBox)atag).Bounds.IntersectsWith(picPacman.Bounds))
+                    if (((PictureBox)atag).Bounds.IntersectsWith(picUserCharacter.Bounds))
                     {
-                        picPacman.Left -= speed;
+                        picUserCharacter.Left -= SPEED;
                     }
                 }
+                //if the character intersects with the bottom game-area-border, reverse their top speed
                 if (atag is PictureBox && atag.Tag == "noMansLandBottom")
                 {
-                    if (((PictureBox)atag).Bounds.IntersectsWith(picPacman.Bounds))
+                    if (((PictureBox)atag).Bounds.IntersectsWith(picUserCharacter.Bounds))
                     {
-                        picPacman.Top -= speed;
+                        picUserCharacter.Top -= SPEED;
                     }
                 }
+                //if the character intersects with the left game-area-border, reverse their left speed
                 if (atag is PictureBox && atag.Tag == "noMansLandLeft")
                 {
-                    if (((PictureBox)atag).Bounds.IntersectsWith(picPacman.Bounds))
+                    if (((PictureBox)atag).Bounds.IntersectsWith(picUserCharacter.Bounds))
                     {
-                        picPacman.Left += speed;
+                        picUserCharacter.Left += SPEED;
                     }
                 }
+                //if the character intersects with the left portion of a wall, reverse their speed
                 if (atag is PictureBox && atag.Tag == "wallLeft")
                 {
-                    if (((PictureBox)atag).Bounds.IntersectsWith(picPacman.Bounds))
+                    if (((PictureBox)atag).Bounds.IntersectsWith(picUserCharacter.Bounds))
                     {
-                        picPacman.Left -= speed;
+                        picUserCharacter.Left -= SPEED;
                     }
                 }
+                //if the character intersects with the top portion of a wall, reverse their speed
                 if (atag is PictureBox && atag.Tag == "wallTop")
                 {
-                    if (((PictureBox)atag).Bounds.IntersectsWith(picPacman.Bounds))
+                    if (((PictureBox)atag).Bounds.IntersectsWith(picUserCharacter.Bounds))
                     {
-                        picPacman.Top -= speed;
+                        picUserCharacter.Top -= SPEED;
                     }
                 }
+                //if the character intersects with the right portion of a wall, reverse their speed
                 if (atag is PictureBox && atag.Tag == "wallRight")
                 {
-                    if (((PictureBox)atag).Bounds.IntersectsWith(picPacman.Bounds))
+                    if (((PictureBox)atag).Bounds.IntersectsWith(picUserCharacter.Bounds))
                     {
-                        picPacman.Left += speed;
+                        picUserCharacter.Left += SPEED;
                     }
                 }
+                //if the character intersects with the bottom portion of a wall, reverse their speed
                 if (atag is PictureBox && atag.Tag == "wallBottom")
                 {
-                    if (((PictureBox)atag).Bounds.IntersectsWith(picPacman.Bounds))
+                    if (((PictureBox)atag).Bounds.IntersectsWith(picUserCharacter.Bounds))
                     {
-                        picPacman.Top += speed;
+                        picUserCharacter.Top += SPEED;
                     }
                 }
             }//end the for loop for checking walls, points and ghosts
 
             //ghost 3 going crazy here
-            //picUgandanKnuckles2.Left += ghost3x;
-            picUgandanKnuckles2.Top += ghost3y;
+            //picUgandanKnuckles2.Left += enemy3x;
+            picUgandanKnuckles2.Top += enemy3y;
 
+            //code checking for intersection with wall
             if (picUgandanKnuckles2.Left < 1 ||
                 picUgandanKnuckles2.Left + picUgandanKnuckles2.Width > ClientSize.Width - 2 ||
                 (picUgandanKnuckles2.Bounds.IntersectsWith(picWall1.Bounds)) ||
@@ -360,11 +406,11 @@ namespace PacMan
                 (picUgandanKnuckles2.Bounds.IntersectsWith(picWall4.Bounds))
                 )
             {
-                ghost3x = -ghost3x;
+                enemy3x = -enemy3x;
             }
             if (picUgandanKnuckles2.Top < 1 || picUgandanKnuckles2.Top + picUgandanKnuckles2.Height > ClientSize.Height - 2)
             {
-                ghost3y = -ghost3y;
+                enemy3y = -enemy3y;
             }
             //end crazy ghost movements
         }
@@ -372,6 +418,8 @@ namespace PacMan
 
         private void PacManForm_Load(object sender, EventArgs e)
         {
+            //play the music and display/hide objects and populate the lists
+            //  also set the character to face in the correct direction
             BackgroundMusic.Play();
             PopulateList();
             PopulateAllOtherObjects();
@@ -379,15 +427,16 @@ namespace PacMan
             lblGameOver.Text = ("");
             if (pacmanChar == true)
             {
-                picPacman.Image = characterRight;
+                picUserCharacter.Image = characterRight;
             }
             else
             {
-                picPacman.Image = characterDown;
+                picUserCharacter.Image = characterDown;
             }
             gameOver = false;
         }
 
+        //add each coin on the form to the list
         public void PopulateList()
         {
             listOfCoins.Add(picCoin1);
@@ -424,6 +473,7 @@ namespace PacMan
             listOfCoins.Add(picCoin30);
         }
 
+        //add every wall and wall object on the form to the list
         private void PopulateAllOtherObjects()
         {
             //add all the walls

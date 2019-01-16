@@ -21,6 +21,8 @@ namespace PacMan
         {
             //pacman is only used for the starting position
             bool pacman = false;
+
+            //opening the level 1 form and passing it the character images it needs
             Form frmLevel1 = new frmLevel1(pacman, Properties.Resources.zachup, Properties.Resources.zachright,
                 Properties.Resources.zachdown, Properties.Resources.zachleft);
             this.Hide();
@@ -32,7 +34,8 @@ namespace PacMan
         {
             bool pacman = true;
             Image characterDown = Properties.Resources.down;
-            characterDown.Tag = "down";
+
+            //opening the level 1 form and passing it the character images it needs
             Form frmLevel1 = new frmLevel1(pacman, characterDown, Properties.Resources.Right,
                 Properties.Resources.down, Properties.Resources.Left);
             this.Hide();
@@ -43,6 +46,7 @@ namespace PacMan
         private void picMohammed_Click(object sender, EventArgs e)
         {
             bool pacman = false;
+            //opening the level 1 form and passing it the character images it needs
             Form frmLevel1 = new frmLevel1(pacman, Properties.Resources.Mohammed, Properties.Resources.Mohammed,
                 Properties.Resources.Mohammed, Properties.Resources.Mohammed);
             this.Hide();

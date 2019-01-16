@@ -39,7 +39,7 @@
             this.picCredit1 = new System.Windows.Forms.PictureBox();
             this.picCredit2 = new System.Windows.Forms.PictureBox();
             this.picCredit3 = new System.Windows.Forms.PictureBox();
-            this.lblQToClose = new System.Windows.Forms.Label();
+            this.lblReopenMenu = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picCredit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCredit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCredit3)).BeginInit();
@@ -159,17 +159,17 @@
             this.picCredit3.TabIndex = 9;
             this.picCredit3.TabStop = false;
             // 
-            // lblQToClose
+            // lblReopenMenu
             // 
-            this.lblQToClose.AutoSize = true;
-            this.lblQToClose.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQToClose.ForeColor = System.Drawing.Color.Yellow;
-            this.lblQToClose.Location = new System.Drawing.Point(460, 85);
-            this.lblQToClose.Name = "lblQToClose";
-            this.lblQToClose.Size = new System.Drawing.Size(328, 20);
-            this.lblQToClose.TabIndex = 10;
-            this.lblQToClose.Text = "Click here to reopen the menu";
-            this.lblQToClose.Click += new System.EventHandler(this.lblQToClose_Click);
+            this.lblReopenMenu.AutoSize = true;
+            this.lblReopenMenu.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReopenMenu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblReopenMenu.Location = new System.Drawing.Point(460, 85);
+            this.lblReopenMenu.Name = "lblReopenMenu";
+            this.lblReopenMenu.Size = new System.Drawing.Size(328, 20);
+            this.lblReopenMenu.TabIndex = 10;
+            this.lblReopenMenu.Text = "Click here to reopen the menu";
+            this.lblReopenMenu.Click += new System.EventHandler(this.lblReopenMenu_Click);
             // 
             // frmCredits
             // 
@@ -177,7 +177,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lblQToClose);
+            this.Controls.Add(this.lblReopenMenu);
             this.Controls.Add(this.picCredit3);
             this.Controls.Add(this.picCredit2);
             this.Controls.Add(this.picCredit1);
@@ -212,6 +212,6 @@
         private System.Windows.Forms.PictureBox picCredit1;
         private System.Windows.Forms.PictureBox picCredit2;
         private System.Windows.Forms.PictureBox picCredit3;
-        private System.Windows.Forms.Label lblQToClose;
+        private System.Windows.Forms.Label lblReopenMenu;
     }
 }

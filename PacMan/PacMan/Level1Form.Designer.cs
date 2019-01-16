@@ -38,7 +38,7 @@
             this.picWall4 = new System.Windows.Forms.PictureBox();
             this.picWall2 = new System.Windows.Forms.PictureBox();
             this.picWall1 = new System.Windows.Forms.PictureBox();
-            this.picPacman = new System.Windows.Forms.PictureBox();
+            this.picUserCharacter = new System.Windows.Forms.PictureBox();
             this.picWaluigi = new System.Windows.Forms.PictureBox();
             this.picUgandanKnuckles2 = new System.Windows.Forms.PictureBox();
             this.picUgandanKnuckles1 = new System.Windows.Forms.PictureBox();
@@ -98,7 +98,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPacman)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUserCharacter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWaluigi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUgandanKnuckles2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUgandanKnuckles1)).BeginInit();
@@ -238,15 +238,15 @@
             this.picWall1.TabStop = false;
             this.picWall1.Tag = "wall";
             // 
-            // picPacman
+            // picUserCharacter
             // 
-            this.picPacman.BackColor = System.Drawing.Color.Transparent;
-            this.picPacman.Location = new System.Drawing.Point(12, 245);
-            this.picPacman.Name = "picPacman";
-            this.picPacman.Size = new System.Drawing.Size(40, 40);
-            this.picPacman.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picPacman.TabIndex = 7;
-            this.picPacman.TabStop = false;
+            this.picUserCharacter.BackColor = System.Drawing.Color.Transparent;
+            this.picUserCharacter.Location = new System.Drawing.Point(12, 245);
+            this.picUserCharacter.Name = "picUserCharacter";
+            this.picUserCharacter.Size = new System.Drawing.Size(40, 40);
+            this.picUserCharacter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picUserCharacter.TabIndex = 7;
+            this.picUserCharacter.TabStop = false;
             // 
             // picWaluigi
             // 
@@ -871,7 +871,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(609, 531);
-            this.Controls.Add(this.picPacman);
+            this.Controls.Add(this.picUserCharacter);
             this.Controls.Add(this.lblTransition);
             this.Controls.Add(this.picWall3);
             this.Controls.Add(this.picWall4);
@@ -946,7 +946,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWall4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWall1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picPacman)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUserCharacter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWaluigi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUgandanKnuckles2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUgandanKnuckles1)).EndInit();
@@ -1016,7 +1016,7 @@
         private System.Windows.Forms.PictureBox picUgandanKnuckles1;
         private System.Windows.Forms.PictureBox picWaluigi;
         private System.Windows.Forms.PictureBox picUgandanKnuckles2;
-        private System.Windows.Forms.PictureBox picPacman;
+        private System.Windows.Forms.PictureBox picUserCharacter;
         private System.Windows.Forms.PictureBox picCoin27;
         private System.Windows.Forms.PictureBox picCoin21;
         private System.Windows.Forms.PictureBox picCoin26;
