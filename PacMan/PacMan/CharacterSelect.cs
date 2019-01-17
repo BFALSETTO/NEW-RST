@@ -33,10 +33,10 @@ namespace PacMan
         private void picMissPacMan_Click(object sender, EventArgs e)
         {
             bool pacman = true;
-            Image characterDown = Properties.Resources.down;
+            Image characterUp = Properties.Resources.Up;
 
             //opening the level 1 form and passing it the character images it needs
-            Form frmLevel1 = new frmLevel1(pacman, characterDown, Properties.Resources.Right,
+            Form frmLevel1 = new frmLevel1(pacman, characterUp, Properties.Resources.Right,
                 Properties.Resources.down, Properties.Resources.Left);
             this.Hide();
             frmLevel1.ShowDialog();
