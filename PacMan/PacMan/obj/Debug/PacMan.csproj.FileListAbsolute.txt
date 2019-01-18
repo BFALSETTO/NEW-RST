@@ -62,3 +62,4 @@ C:\Users\benja\Downloads\PacMan\NEW-RST\PacMan\PacMan\obj\Debug\PacMan.csproj.Ge
 C:\Users\benja\Downloads\PacMan\NEW-RST\PacMan\PacMan\obj\Debug\PacMan.csproj.CoreCompileInputs.cache
 C:\Users\benja\Downloads\PacMan\NEW-RST\PacMan\PacMan\obj\Debug\PacMan.exe
 C:\Users\benja\Downloads\PacMan\NEW-RST\PacMan\PacMan\obj\Debug\PacMan.pdb
+C:\Users\benja\Downloads\PacMan\NEW-RST\PacMan\PacMan\obj\Debug\PacMan.WinForm.resources

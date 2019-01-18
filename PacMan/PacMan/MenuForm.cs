@@ -21,7 +21,7 @@ namespace PacMan
         //when btnLevel1 is clicked, open the level 1 form
         private void btnLevel1_Click(object sender, EventArgs e)
         {
-            Form frmCharacterSelect = new frmCharacterSelect();
+            Form frmCharacterSelect = new frmCharacterSelect(1);
             this.Hide();
             frmCharacterSelect.ShowDialog();
             this.Close();
