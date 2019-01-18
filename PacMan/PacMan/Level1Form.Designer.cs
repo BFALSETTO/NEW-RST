@@ -160,11 +160,11 @@
             // 
             this.lblScore.AutoSize = true;
             this.lblScore.BackColor = System.Drawing.Color.Transparent;
-            this.lblScore.Font = new System.Drawing.Font("OCR A Extended", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScore.ForeColor = System.Drawing.Color.Yellow;
             this.lblScore.Location = new System.Drawing.Point(17, 45);
             this.lblScore.Name = "lblScore";
-            this.lblScore.Size = new System.Drawing.Size(63, 17);
+            this.lblScore.Size = new System.Drawing.Size(71, 20);
             this.lblScore.TabIndex = 37;
             this.lblScore.Text = "SCORE";
             // 
@@ -172,11 +172,11 @@
             // 
             this.lblGameOver.AutoSize = true;
             this.lblGameOver.BackColor = System.Drawing.Color.Transparent;
-            this.lblGameOver.Font = new System.Drawing.Font("OCR A Extended", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGameOver.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGameOver.ForeColor = System.Drawing.Color.Yellow;
             this.lblGameOver.Location = new System.Drawing.Point(234, 9);
             this.lblGameOver.Name = "lblGameOver";
-            this.lblGameOver.Size = new System.Drawing.Size(166, 29);
+            this.lblGameOver.Size = new System.Drawing.Size(186, 31);
             this.lblGameOver.TabIndex = 38;
             this.lblGameOver.Text = "GAME OVER";
             // 
@@ -190,11 +190,11 @@
             // 
             this.lblTransition.AutoSize = true;
             this.lblTransition.BackColor = System.Drawing.Color.Transparent;
-            this.lblTransition.Font = new System.Drawing.Font("OCR A Extended", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTransition.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTransition.ForeColor = System.Drawing.Color.Yellow;
             this.lblTransition.Location = new System.Drawing.Point(19, 250);
             this.lblTransition.Name = "lblTransition";
-            this.lblTransition.Size = new System.Drawing.Size(570, 23);
+            this.lblTransition.Size = new System.Drawing.Size(445, 25);
             this.lblTransition.TabIndex = 61;
             this.lblTransition.Text = "Press any key to return to the main menu";
             // 
