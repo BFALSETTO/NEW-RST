@@ -40,6 +40,7 @@
             this.picCredit2 = new System.Windows.Forms.PictureBox();
             this.picCredit3 = new System.Windows.Forms.PictureBox();
             this.lblReopenMenu = new System.Windows.Forms.Label();
+            this.lblMadeBy = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picCredit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCredit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCredit3)).BeginInit();
@@ -48,22 +49,22 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("OCR A Extended", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Font = new System.Drawing.Font("OCR A Std", 20.25F);
             this.lblName.ForeColor = System.Drawing.Color.Yellow;
-            this.lblName.Location = new System.Drawing.Point(331, 9);
+            this.lblName.Location = new System.Drawing.Point(327, 9);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(125, 29);
+            this.lblName.Size = new System.Drawing.Size(146, 29);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "PAC-MAN";
             // 
             // lblChooseRad
             // 
             this.lblChooseRad.AutoSize = true;
-            this.lblChooseRad.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblChooseRad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblChooseRad.ForeColor = System.Drawing.Color.Yellow;
             this.lblChooseRad.Location = new System.Drawing.Point(91, 85);
             this.lblChooseRad.Name = "lblChooseRad";
-            this.lblChooseRad.Size = new System.Drawing.Size(273, 40);
+            this.lblChooseRad.Size = new System.Drawing.Size(224, 48);
             this.lblChooseRad.TabIndex = 1;
             this.lblChooseRad.Text = "Choose a category to see\r\nthe resources used";
             // 
@@ -162,14 +163,25 @@
             // lblReopenMenu
             // 
             this.lblReopenMenu.AutoSize = true;
-            this.lblReopenMenu.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReopenMenu.Font = new System.Drawing.Font("OCR A Std", 14.25F);
             this.lblReopenMenu.ForeColor = System.Drawing.Color.Yellow;
-            this.lblReopenMenu.Location = new System.Drawing.Point(460, 85);
+            this.lblReopenMenu.Location = new System.Drawing.Point(373, 85);
             this.lblReopenMenu.Name = "lblReopenMenu";
-            this.lblReopenMenu.Size = new System.Drawing.Size(328, 20);
+            this.lblReopenMenu.Size = new System.Drawing.Size(415, 20);
             this.lblReopenMenu.TabIndex = 10;
             this.lblReopenMenu.Text = "Click here to reopen the menu";
             this.lblReopenMenu.Click += new System.EventHandler(this.lblReopenMenu_Click);
+            // 
+            // lblMadeBy
+            // 
+            this.lblMadeBy.AutoSize = true;
+            this.lblMadeBy.Font = new System.Drawing.Font("OCR A Std", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMadeBy.ForeColor = System.Drawing.Color.Yellow;
+            this.lblMadeBy.Location = new System.Drawing.Point(221, 328);
+            this.lblMadeBy.Name = "lblMadeBy";
+            this.lblMadeBy.Size = new System.Drawing.Size(359, 20);
+            this.lblMadeBy.TabIndex = 11;
+            this.lblMadeBy.Text = "Made By Benjamin Falsetto";
             // 
             // frmCredits
             // 
@@ -177,6 +189,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblMadeBy);
             this.Controls.Add(this.lblReopenMenu);
             this.Controls.Add(this.picCredit3);
             this.Controls.Add(this.picCredit2);
@@ -213,5 +226,6 @@
         private System.Windows.Forms.PictureBox picCredit2;
         private System.Windows.Forms.PictureBox picCredit3;
         private System.Windows.Forms.Label lblReopenMenu;
+        private System.Windows.Forms.Label lblMadeBy;
     }
 }

@@ -66,6 +66,11 @@ namespace PacMan
 
         }
 
+        private void picUgandanKnuckles1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void frmLevel1_KeyPress(object sender, KeyPressEventArgs e)
         {
             //if the user lost, the user will be able to return to the main menu

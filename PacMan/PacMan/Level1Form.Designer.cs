@@ -282,6 +282,7 @@
             this.picUgandanKnuckles1.TabIndex = 4;
             this.picUgandanKnuckles1.TabStop = false;
             this.picUgandanKnuckles1.Tag = "ghost";
+            this.picUgandanKnuckles1.Click += new System.EventHandler(this.picUgandanKnuckles1_Click);
             // 
             // picWall4Top
             // 
