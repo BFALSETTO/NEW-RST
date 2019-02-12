@@ -54,6 +54,8 @@ namespace PacMan
 
         private void lblReopenMenu_Click(object sender, EventArgs e)
         {
+            SplashSound.Stop();
+            BackSound.Stop();
             //open the menu form
             Form frmMenu = new frmMenu();
             this.Hide();

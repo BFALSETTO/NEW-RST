@@ -192,7 +192,7 @@
             this.lblTransition.BackColor = System.Drawing.Color.Transparent;
             this.lblTransition.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTransition.ForeColor = System.Drawing.Color.Yellow;
-            this.lblTransition.Location = new System.Drawing.Point(19, 250);
+            this.lblTransition.Location = new System.Drawing.Point(82, 250);
             this.lblTransition.Name = "lblTransition";
             this.lblTransition.Size = new System.Drawing.Size(445, 25);
             this.lblTransition.TabIndex = 61;

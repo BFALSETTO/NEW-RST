@@ -34,16 +34,17 @@
             this.btnLevel2 = new System.Windows.Forms.Button();
             this.btnLevel3 = new System.Windows.Forms.Button();
             this.btnCredits = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblMenu
             // 
             this.lblMenu.AutoSize = true;
-            this.lblMenu.Font = new System.Drawing.Font("OCR A Extended", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMenu.ForeColor = System.Drawing.Color.Yellow;
             this.lblMenu.Location = new System.Drawing.Point(124, 25);
             this.lblMenu.Name = "lblMenu";
-            this.lblMenu.Size = new System.Drawing.Size(125, 29);
+            this.lblMenu.Size = new System.Drawing.Size(139, 31);
             this.lblMenu.TabIndex = 0;
             this.lblMenu.Text = "PAC-MAN";
             // 
@@ -53,7 +54,7 @@
             this.btnLevel1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnLevel1.FlatAppearance.BorderSize = 0;
             this.btnLevel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLevel1.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLevel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLevel1.ForeColor = System.Drawing.Color.Yellow;
             this.btnLevel1.Location = new System.Drawing.Point(146, 85);
             this.btnLevel1.Name = "btnLevel1";
@@ -68,7 +69,7 @@
             this.btnLevel2.BackColor = System.Drawing.Color.Black;
             this.btnLevel2.FlatAppearance.BorderSize = 0;
             this.btnLevel2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLevel2.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLevel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLevel2.ForeColor = System.Drawing.Color.Yellow;
             this.btnLevel2.Location = new System.Drawing.Point(146, 135);
             this.btnLevel2.Name = "btnLevel2";
@@ -82,7 +83,7 @@
             this.btnLevel3.BackColor = System.Drawing.Color.Black;
             this.btnLevel3.FlatAppearance.BorderSize = 0;
             this.btnLevel3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLevel3.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLevel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLevel3.ForeColor = System.Drawing.Color.Yellow;
             this.btnLevel3.Location = new System.Drawing.Point(146, 185);
             this.btnLevel3.Name = "btnLevel3";
@@ -96,7 +97,7 @@
             this.btnCredits.BackColor = System.Drawing.Color.Black;
             this.btnCredits.FlatAppearance.BorderSize = 0;
             this.btnCredits.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCredits.Font = new System.Drawing.Font("OCR A Extended", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCredits.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCredits.ForeColor = System.Drawing.Color.Yellow;
             this.btnCredits.Location = new System.Drawing.Point(146, 235);
             this.btnCredits.Name = "btnCredits";
@@ -106,12 +107,29 @@
             this.btnCredits.UseVisualStyleBackColor = false;
             this.btnCredits.Click += new System.EventHandler(this.btnCredits_Click);
             // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Black;
+            this.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.Yellow;
+            this.btnExit.Location = new System.Drawing.Point(12, 12);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(39, 24);
+            this.btnExit.TabIndex = 5;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(387, 305);
+            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnCredits);
             this.Controls.Add(this.btnLevel3);
             this.Controls.Add(this.btnLevel2);
@@ -134,5 +152,6 @@
         private System.Windows.Forms.Button btnLevel2;
         private System.Windows.Forms.Button btnLevel3;
         private System.Windows.Forms.Button btnCredits;
+        private System.Windows.Forms.Button btnExit;
     }
 }
