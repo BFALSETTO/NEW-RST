@@ -16,5 +16,13 @@ namespace PacMan
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Form frmMenu = new frmMenu();
+            this.Hide();
+            frmMenu.ShowDialog();
+            this.Close();
+        }
     }
 }

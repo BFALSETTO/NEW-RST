@@ -66,7 +66,6 @@ C:\Users\benja\Downloads\PacMan\NEW-RST\PacMan\PacMan\obj\Debug\PacMan.WinForm.r
 C:\Users\s255212\Documents\GitHub\NEW-RST\PacMan\PacMan\bin\Debug\PacMan.exe.config
 C:\Users\s255212\Documents\GitHub\NEW-RST\PacMan\PacMan\bin\Debug\PacMan.exe
 C:\Users\s255212\Documents\GitHub\NEW-RST\PacMan\PacMan\bin\Debug\PacMan.pdb
-C:\Users\s255212\Documents\GitHub\NEW-RST\PacMan\PacMan\obj\Debug\PacMan.csprojAssemblyReference.cache
 C:\Users\s255212\Documents\GitHub\NEW-RST\PacMan\PacMan\obj\Debug\PacMan.frmCharacterSelect.resources
 C:\Users\s255212\Documents\GitHub\NEW-RST\PacMan\PacMan\obj\Debug\PacMan.frmCredits.resources
 C:\Users\s255212\Documents\GitHub\NEW-RST\PacMan\PacMan\obj\Debug\PacMan.frmWin.resources
@@ -75,6 +74,6 @@ C:\Users\s255212\Documents\GitHub\NEW-RST\PacMan\PacMan\obj\Debug\PacMan.frmLeve
 C:\Users\s255212\Documents\GitHub\NEW-RST\PacMan\PacMan\obj\Debug\PacMan.Properties.Resources.resources
 C:\Users\s255212\Documents\GitHub\NEW-RST\PacMan\PacMan\obj\Debug\PacMan.frmSplashScreen.resources
 C:\Users\s255212\Documents\GitHub\NEW-RST\PacMan\PacMan\obj\Debug\PacMan.csproj.GenerateResource.cache
-C:\Users\s255212\Documents\GitHub\NEW-RST\PacMan\PacMan\obj\Debug\PacMan.csproj.CoreCompileInputs.cache
 C:\Users\s255212\Documents\GitHub\NEW-RST\PacMan\PacMan\obj\Debug\PacMan.exe
 C:\Users\s255212\Documents\GitHub\NEW-RST\PacMan\PacMan\obj\Debug\PacMan.pdb
+C:\Users\s255212\Documents\GitHub\NEW-RST\PacMan\PacMan\obj\Debug\PacMan.csprojResolveAssemblyReference.cache
